@@ -162,8 +162,8 @@ def test_model(test,network):
 
 	predictions = []
 	for i in xrange(0,total_number,batch_size):
-		a_test,b_test,c_test,Y_test = get_batch_testing_set()
-		predictions += test(a_test,b_test,c_test)
+		a_test_batch,b_test_batch,c_test_batch = get_batch_testing_set()
+		predictions += test(a_test_batch,b_test_batch,c_test_batch)
 		### Test accuracy can also be calculated depending on the type of data/metrics needed using 'predictions' and 'Y_test'
 	
 if __name__ = '__main__':

@@ -107,6 +107,14 @@ def test_model(test,network):
 	'''
 	In case testing in batch size is needed, similar thing can be implemented as above.
 	'''
+
+	predictions = []
+	
+	for i in xrange(0,total_number,batch_size):
+
+		X_test_batch,Y_test_batch = get_batch_testing_set()
+		predictions += test(X_test_batch)
+		### Test accuracy can also be calculated depending on the type of data/metrics needed using 'predictions' and 'Y_test'
 	
 if __name__ = '__main__':
 
