@@ -39,7 +39,7 @@ def create_nn():
 	flat = flatten(conv2_do,2) #Bx8192
 	fc = DenseLayer(flat,num_units=512,nonlinearity=lasagne.nonlinearities.rectify) #Bx512
 	fc_do = dropout(fc, p=0.5) 
-	network = DenseLayer(fc_do, num_units=nb_classes, nonlinearity=lasagne.nonlinearities.rectify) #Bxnb_classes
+	network = DenseLayer(fc_do, num_units=nb_classes, nonlinearity=lasagne.nonlinearities.softmax	) #Bxnb_classes
 
 	net_output = lasagne.layers.get_output(network)
 	true_output = T.matrix()
